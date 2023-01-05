@@ -11,6 +11,7 @@ import {terser} from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 const outputs = [
+  // 输出两种规范
   {
     file: process.env.REACT_APP_PKG_MAIN || pkg.main,
     format: 'umd',
@@ -30,7 +31,7 @@ const postcssPlugins = [
 ];
 
 const config = outputs.map(({file, format}) => ({
-  input: 'src/lib/index.js',
+  input: 'src/lib/index.js', // 入口文件
   output: {
     file,
     format,
@@ -67,5 +68,7 @@ const config = outputs.map(({file, format}) => ({
     filesize(),
   ],
 }));
+
+// 这个项目给了非常好的参考！！ 其实很多仓库的library类型项目 就可以用这个template创建！！
 
 export default config;

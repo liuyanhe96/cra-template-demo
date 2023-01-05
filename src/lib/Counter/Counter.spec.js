@@ -2,6 +2,8 @@ import React from 'react';
 import {render, fireEvent} from '@testing-library/react';
 import {Counter} from './Counter';
 
+// 测试文件！！！
+
 describe('lib > Counter', () => {
   /**
    * Jest hook which runs before each test,
